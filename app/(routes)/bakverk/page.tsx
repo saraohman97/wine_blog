@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { BiSearch } from "react-icons/bi";
 
 const BakverkPage = () => {
@@ -58,10 +59,10 @@ const BakverkPage = () => {
         alt=""
         height={1000}
         width={1000}
-        className="h-96 w-full object-cover object-top"
+        className="max-h-96 w-full object-cover object-top"
       />
 
-        <div className="max-w-screen-xl mx-auto my-10">
+        <div className="max-w-screen-xl mx-auto my-10 px-2 sm:px-6">
             <h1 className="text-4xl font-extralight mb-6">Bakverk</h1>
             <div className="flex flex-wrap gap-6 mb-10">
                 {categories.map((item) => (
@@ -75,17 +76,17 @@ const BakverkPage = () => {
 
             <div className="grid grid-cols-3 gap-4 sm:gap-10">
             {posts.map((item) => (
-              <div key={item.id}>
+              <Link href={`/${item.id}`} key={item.id}>
                 <Image
                   alt=""
                   src={item.image}
                   width={500}
                   height={500}
-                  className="object-cover rounded-xl max-h-96"
+                  className="object-cover rounded-xl aspect-square"
                 />
                 <h3 className="font-bold text-center mt-2">{item.title}</h3>
                 <p className="text-center text-sm font-light">{item.category}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

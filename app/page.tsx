@@ -5,7 +5,7 @@ export default function Home() {
   const categoryBoxes = [
     {
       name: "Reviews",
-      image: "/bg.jpg",
+      image: "/bakverk.jpg",
       link: "/bakverk",
     },
     {
@@ -72,7 +72,7 @@ export default function Home() {
                 src={item.image}
                 width={500}
                 height={500}
-                className="object-cover rounded-xl w-full"
+                className="aspect-square object-cover rounded-xl w-full"
               />
               <div className="absolute inset-0 flex items-center justify-center text-white bg-[#6C1D1D]/50 rounded-xl">
                 {item.name} {"-->"}
@@ -82,7 +82,7 @@ export default function Home() {
         </div>
 
         <div>
-          <h1 className="text-3xl font-light mb-10">Nyaste Recepten</h1>
+          <h1 className="text-3xl font-light mb-10">Nyaste recepten</h1>
           <div className="grid grid-cols-3 gap-4 sm:gap-10">
             {posts.map((item) => (
               <Link href={`/${item.id}`} key={item.id}>
@@ -91,7 +91,7 @@ export default function Home() {
                   src={item.image}
                   width={500}
                   height={500}
-                  className="object-cover rounded-xl max-h-96"
+                  className="object-cover rounded-xl aspect-square"
                 />
                 <h3 className="font-bold text-center mt-2">{item.title}</h3>
                 <p className="text-center text-sm font-light">{item.category}</p>
